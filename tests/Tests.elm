@@ -1,9 +1,9 @@
-module Tests exposing (..)
+module Tests exposing (all)
 
-import Test exposing (..)
+import Dict
 import Expect
 import OrderedDict as OrdDict
-import Dict
+import Test exposing (..)
 
 
 all : Test
