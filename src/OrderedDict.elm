@@ -1,24 +1,24 @@
-module OrderedDict
-    exposing
-        ( OrderedDict
-        , empty
-        , singleton
-        , insert
-        , insertAt
-        , update
-        , remove
-        , orderedValues
-        )
+module OrderedDict exposing
+    ( OrderedDict
+    , empty, singleton, insert, insertAt, update, remove
+    , orderedValues
+    )
 
 {-| A dictionary mapping unique keys to values preserving insert order.
 
+
 # Dictionaries
+
 @docs OrderedDict
 
+
 # Build
+
 @docs empty, singleton, insert, insertAt, update, remove
 
+
 # Lists
+
 @docs orderedValues
 
 -}
@@ -60,12 +60,13 @@ insert key value orderedDict =
         newOrder =
             if Dict.member key orderedDict.dict then
                 orderedDict.order
+
             else
                 List.append orderedDict.order [ key ]
     in
-        { order = newOrder
-        , dict = Dict.insert key value orderedDict.dict
-        }
+    { order = newOrder
+    , dict = Dict.insert key value orderedDict.dict
+    }
 
 
 {-| Insert a key-value pair into a specific location in the order of an ordered dictionary. Replaces value when there is a collision.
@@ -82,9 +83,9 @@ insertAt index key value orderedDict =
         newOrder =
             List.concat [ start, [ key ], end ]
     in
-        { order = newOrder
-        , dict = Dict.insert key value orderedDict.dict
-        }
+    { order = newOrder
+    , dict = Dict.insert key value orderedDict.dict
+    }
 
 
 {-| Update the value of an ordered dictionary for a specific key with a given function.
@@ -95,6 +96,7 @@ update key alter orderedDict =
         { order = orderedDict.order
         , dict = Dict.update key alter orderedDict.dict
         }
+
     else
         orderedDict
 
@@ -115,7 +117,8 @@ remove key orderedDict =
         |> insert 45 "World"
         |> insertAt 1 39 "Elm"
         |> toList
-    == [ "Hello", "Elm", "World" ]
+        == [ "Hello", "Elm", "World" ]
+
 -}
 orderedValues : OrderedDict comparable v -> List v
 orderedValues orderedDict =
