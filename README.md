@@ -1,3 +1,5 @@
+**DEPRECATED** this package was merged with [y0hy0h/ordered-containers](https://package.elm-lang.org/packages/y0hy0h/ordered-containers/latest/). For latest updates, please use that package instead.
+
 # elm-ordered-dict
 
 A dictionary mapping unique keys to values preserving insert order
