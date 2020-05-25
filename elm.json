@@ -3,7 +3,7 @@
     "name": "wittjosiah/elm-ordered-dict",
     "summary": "A dictionary mapping unique keys to values preserving insert order.",
     "license": "BSD-3-Clause",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "exposed-modules": [
         "OrderedDict"
     ],
